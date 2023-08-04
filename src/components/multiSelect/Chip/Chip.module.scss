@@ -1,0 +1,27 @@
+
+
+.chip {
+    display: inline-block;
+    margin-right: 2px;
+    background: rgb(96 30 130);
+    color: #fff;
+    padding: 2px 3px;
+    border-radius: 3px;
+
+    &[aria-selected]::before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        border: 1px solid #616166;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1px;
+    }
+
+    &[aria-selected=true]::before {
+        content: '\2713';
+        color: green;
+        background-color: #fff;
+    }
+}

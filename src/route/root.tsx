@@ -1,14 +1,10 @@
-import {  Outlet } from "react-router-dom";
-import { Navbar } from "../components/navbar";
+import { Outlet } from "react-router-dom";
 
 export default function Root() {
   return (
-    <>
-      <Navbar />
+    <main>
       <Outlet />
-      <footer>
-        <h2> Aqui vem o footer</h2>
-      </footer>
-    </>
+    </main>
+
   );
 }

@@ -1,0 +1,16 @@
+.multiselectdemo {
+    ._header {
+        display: flex;
+        align-items: center;
+        border: 1px solid #333;
+        padding: 1px 0;
+
+        ._chevron {
+            height: 100%;
+            &-rotate {
+                transition: ease-in-out .3s;
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
