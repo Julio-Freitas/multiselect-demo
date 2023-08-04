@@ -1,0 +1,33 @@
+.navMenu{
+ background-color: #fff3;
+ padding: 10px;
+ display: flex;
+ justify-content: center;
+ gap: 25px;
+}
+
+.navMenu a {
+    color: #fff;
+    transition: ease-in-out .1s;
+
+}
+
+
+.navMenu .dot {
+  width: 60px;
+  height: 5px;
+  background: red;
+  border-radius:15px;
+  opacity: 1;
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:nth-child(1):hover ~ .dot{
+    background-color: red;
+    transform: translateX(-160px);
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
