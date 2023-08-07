@@ -5,9 +5,10 @@ import {
   Suspense,
   useEffect,
 } from "react";
-import { MultiSelect } from "../../multiSelect";
+
 import styles from "./multiselect-demo.module.scss";
 import { GetOptionsSelect } from "../../../service/apiFake";
+import { MultiSelect } from "../../multiSelectDemo";
 
 interface OptionFakeType {
   name: string;
