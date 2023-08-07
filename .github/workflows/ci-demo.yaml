@@ -1,13 +1,13 @@
 name: "Ci app-multiselect-demo"
 
 on:
-    push:
-      branchs:
-       - main
+  push:
+    branches:
+      - main
 
 jobs:
-  deploy:
-   runs-on: ununtu-latest
+  lint:
+   runs-on: ubuntu-18.04
    strategy:
         matrix:
           node-version: [16.x]
