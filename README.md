@@ -13,11 +13,10 @@
   -  yarn or npm install
   - yarn dev
   - visit  http://localhost:5173/
-``
+````
 <div align="center">
   <br/>
     <div>
       <sub>Copyright © 2023 - <a href="https://github.com/Julio-Freitas">julioFreitas</sub></a>
     </div>
-
 </div>
