@@ -4,7 +4,6 @@
 
 > implementation study of component creation by composition
 
--ALURA: Next.js rquitetura Front-end:. [curso alura](https://cursos.alura.com.br/course/nextjs-arquitetura-front-end)
 
 ---
 ## RUN parojetc
@@ -15,7 +14,6 @@
   - yarn dev
   - visit  http://localhost:5173/
 ``
-
 <div align="center">
   <br/>
     <div>
