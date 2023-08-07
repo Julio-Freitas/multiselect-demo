@@ -1,4 +1,4 @@
-type OptionType = {
+interface OptionType {
     name: string;
     selected: boolean;
     id: number;

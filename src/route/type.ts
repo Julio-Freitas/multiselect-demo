@@ -8,6 +8,6 @@ export interface ErrorResponsePage {
   statusText: string;
   internal: boolean;
   data: string;
-  error: { [key: string]: string };
+  error: Record<string, string>;
   message: string
 }
