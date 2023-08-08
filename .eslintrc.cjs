@@ -10,7 +10,7 @@ module.exports = {
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
-  plugins: ["react", "react-refresh"],
+  plugins: ["react", "react-refresh", "@typescript-eslint"],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
