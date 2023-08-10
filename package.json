@@ -11,7 +11,7 @@
     "test": "vitest --run",
     "coverage": "yarn test --coverage",
     "depcheck": "depcheck",
-    "predeploy": "yarn run build",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
