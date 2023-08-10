@@ -34,6 +34,8 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - run: |
+          git credential-cache exit
+          git credential-cache exit
           yarn install --frozen-lockfile
           yarn lint
           yarn test
