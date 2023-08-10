@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "test": "vitest --run",
     "coverage": "yarn test --coverage",
-    "depcheck": "depcheck"
+    "depcheck": "depcheck",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -18,6 +20,7 @@
     "react-router-dom": "6"
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "@babel/core": "^7.22.10",
     "@babel/preset-env": "^7.22.10",
     "@babel/preset-react": "^7.22.5",
