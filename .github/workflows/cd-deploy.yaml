@@ -17,6 +17,7 @@ jobs:
           yarn install
           yarn lint
           yarn test
+          yarn deploy
 
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v1
