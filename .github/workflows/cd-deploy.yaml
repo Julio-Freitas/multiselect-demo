@@ -4,13 +4,29 @@ on:
     branches:
       - main
 jobs:
-  build:
-
+  build-deploy:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x]
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
+      - name: set-up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: |
+          yarn install
+          yarn lint
+          yarn test
 
-    - name: Deploy react app to github pages
-      uses: tanwanimohit/deploy-react-to-ghpages@v1.0.2
+      - name: build App
+        run: yarn build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
 
