@@ -1,13 +1,24 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen} from "@testing-library/react";
 import { Label } from "..";
 
-describe("<Label />", () => {
-  it("should render corretcly", () => {
+describe("Label component", () => {
+  it("renders children correctly", () => {
+    const { getByText } = render(<Label>Hello, World!</Label>);
+    const labelElement = getByText("Hello, World!");
+    expect(labelElement).toBeInTheDocument();
+  });
+
+  it("passes additional props correctly", () => {
+    const htmlForValue = "inputField";
     render(
-      <Label>
-        <div data-testid="Label" />
-      </Label>
+      <>
+        <Label htmlFor={`${htmlForValue}`}>Username:</Label>
+        <input id={htmlForValue} type="text" />
+      </>
     );
-    expect(screen.getByTestId("Label")).toBeInTheDocument();
+
+    const labelElement = screen.getByLabelText("Username:");
+
+    expect(labelElement.previousSibling).toHaveAttribute("for", "inputField");
   });
 });
