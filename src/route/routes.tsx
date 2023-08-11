@@ -9,9 +9,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     errorElement: <ErrorBoundary />,
-    children: [
-      { path: "/", element: <Home /> },
-    ],
+    children: [{ path: "/multiselect-demo", element: <Home /> }],
   },
 ]);
 
