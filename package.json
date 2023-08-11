@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Julio-Freitas.github.io/multiselect-demo",
+  "homepage": "https://julio-freitas.github.io/multiselect-demo/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -12,7 +12,7 @@
     "test": "vitest --run",
     "coverage": "yarn test --coverage",
     "depcheck": "depcheck",
-    "predeploy": "npm run build",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

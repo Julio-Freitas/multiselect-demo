@@ -1,41 +1,38 @@
-name: Deploy
+name: Deploy Multiselect POC
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
+      -
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
 
     strategy:
       matrix:
         node-version: [16.x]
 
     steps:
-      - uses: actions/checkout@v3
-      - name: set-up Node.js
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - name: set-up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: |
-          git config --global user.name 'Julio-freitas'
-          git config --global user.email 'julio.clf31@gmail.com'
-
-          yarn install --frozen-lockfile
+      - name: install dependencies and run build
+        run: |
+          yarn  --frozen-lockfile
           yarn lint
-          yarn test
-          yarn deploy
+          yarn build --if-present
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./build
 
 
 
