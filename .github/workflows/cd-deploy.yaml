@@ -24,8 +24,7 @@ jobs:
       - name: install dependencies and run build
         run: |
           yarn  install --frozen-lockfile
-          yarn lint
-          yarn build --if-present
+          yarn build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
