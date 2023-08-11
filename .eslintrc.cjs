@@ -7,6 +7,7 @@ module.exports = {
     "plugin:@typescript-eslint/stylistic-type-checked",
     "plugin:react-hooks/recommended",
     "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
@@ -27,6 +28,13 @@ module.exports = {
     ],
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
     "@typescript-eslint/prefer-nullish-coalescing": "off",
+  },
+  settings: {
+    react: {
+      version: "detect", // Or specify your React version, e.g., "16.13"
+    },
   },
 };
